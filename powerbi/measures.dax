@@ -1,0 +1,55 @@
+Total Shipments = 
+COUNTROWS('fact_shipments')
+
+On-Time Deliveries = 
+CALCULATE(
+    COUNTROWS('fact_shipments'),
+    'fact_shipments'[is_on_time] = 1
+)
+
+Late Deliveries = 
+CALCULATE(
+    COUNTROWS('fact_shipments'),
+    'fact_shipments'[is_late] = 1
+)
+
+OTD % = 
+DIVIDE(
+    [On-Time Deliveries],
+    [Total Shipments],
+    0
+)
+
+SLA Breach Rate % = 
+DIVIDE(
+    [Late Deliveries],
+    [Total Shipments],
+    0
+)
+
+Total Gross Sales = 
+SUM('fact_shipments'[sales])
+
+Delayed Revenue at Risk = 
+CALCULATE(
+    SUM('fact_shipments'[sales]),
+    'fact_shipments'[is_late] = 1
+)
+
+Average Transit Days = 
+AVERAGE('fact_shipments'[real_days])
+
+Total Delay Days = 
+SUM('fact_shipments'[delay_days])
+
+Average Delay Days Breached = 
+CALCULATE(
+    AVERAGE('fact_shipments'[delay_days]),
+    'fact_shipments'[is_late] = 1
+)
+
+Mode Performance Score = 
+[OTD %] * 100
+
+OTD Target Variance % = 
+[OTD %] - 0.50

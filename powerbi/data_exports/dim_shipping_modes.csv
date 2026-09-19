@@ -1,0 +1,5 @@
+mode_id,shipping_mode_name,sla_standard_days
+1,First Class,1
+2,Same Day,0
+3,Second Class,2
+4,Standard Class,4

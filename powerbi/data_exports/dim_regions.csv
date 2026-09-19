@@ -1,0 +1,24 @@
+region_id,order_region,market
+1,Central Africa,Africa
+2,East Africa,Africa
+3,North Africa,Africa
+4,Southern Africa,Africa
+5,West Africa,Africa
+6,Eastern Europe,Europe
+7,Northern Europe,Europe
+8,Southern Europe,Europe
+9,Western Europe,Europe
+10,Caribbean,LATAM
+11,Central America,LATAM
+12,South America,LATAM
+13,Central Asia,Pacific Asia
+14,Eastern Asia,Pacific Asia
+15,Oceania,Pacific Asia
+16,South Asia,Pacific Asia
+17,Southeast Asia,Pacific Asia
+18,West Asia,Pacific Asia
+19,Canada,USCA
+20,East of USA,USCA
+21,South of  USA ,USCA
+22,US Center ,USCA
+23,West of USA ,USCA
